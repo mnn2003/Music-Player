@@ -32,6 +32,8 @@ const Player: React.FC<PlayerProps> = ({ song }) => {
       audioRef.current.onloadedmetadata = () => {
         setDuration(audioRef.current?.duration || 0);
       };
+      setCurrentTime(0);
+      setDuration(0);
     }
   }, [song]);
 
