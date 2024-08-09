@@ -13,7 +13,7 @@ export const songs: Song[] = [
     id: '2',
     title: 'Sadiyaan Beet Gaeen ',
     artist: 'Aman Kumar',
-    coverUrl: '/covers/image_eeec5627-4835-45b0-8aa2-3298f31720ea.png',
+    coverUrl: '/covers/image_c4e4328c-1e13-4c34-84ed-3009945771a0.png',
     audioUrl: '/Sadiyaan Beet Gaeen.mp3',
   },
   {
