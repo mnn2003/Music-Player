@@ -28,6 +28,10 @@ const Player: React.FC<PlayerProps> = ({ song }) => {
       setIsPlaying(true);
       setCurrentSong(song);
       setCurrentSongIndex(tracks.findIndex((t) => t.id === song.id));
+
+      audioRef.current.onloadedmetadata = () => {
+        setDuration(audioRef.current?.duration || 0);
+      };
     }
   }, [song]);
 
@@ -209,14 +213,20 @@ const Player: React.FC<PlayerProps> = ({ song }) => {
 
             <div className="flex items-center space-x-4 mt-2">
               <input
-                type="range"
-                min={0}
-                max={duration}
-                value={currentTime}
-                onChange={handleSeek}
-                className="appearance-none w-full h-1 bg-gray-700 rounded-lg outline-none focus:outline-none transition-all duration-300 ease-in-out"
-              />
-              <span className="text-xs text-gray-400">{formatTime(currentTime)}</span>
+                  type="range"
+                  min="0"
+                  max={duration}
+                  step="0.01"
+                  value={currentTime}
+                  onChange={handleSeek}
+                  className="appearance-none w-full h-1 bg-gray-700 rounded-lg outline-none focus:outline-none transition-all duration-300 ease-in-out"
+                />
+              <span className={isDarkMode ? 'text-white' : 'text-black'}>
+                    {formatTime(currentTime)}
+                  </span>
+                  <span className={isDarkMode ? 'text-white' : 'text-black'}>
+                    / {formatTime(duration)}
+                  </span>
             </div>
             <div className="flex items-center space-x-4 mt-2">
               <button
