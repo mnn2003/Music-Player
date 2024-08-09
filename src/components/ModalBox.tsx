@@ -22,18 +22,18 @@ const Modal = ({ onClose }: { onClose: () => void }) => {
               <Image src='/musiclover.jpg' width={30} height={30} alt="App Image" layout="responsive" className="w-full h-full rounded-lg" />
             </div>
           </div>
-          <p>Welcome to Tunify Music Player built with <strong>Next.js</strong>, <strong>framer-motion</strong>, <strong>Tailwind CSS</strong>, <strong>IconBuddy</strong>, <strong>Culrs</strong>, and <strong>Vercel</strong>.</p>
-          <p className="mt-4"><strong>Users can:</strong></p>
-          <ul className="list-disc list-inside pl-4 mt-2">
-            <li>Listen Popular Songs </li>
-            <li>Can Shuffle & Repeat songs</li>
-            <li>Enjoy Backgound animations</li>
-            <li>Can Search Songs</li>
-            <li>Light/Dark Theme</li>
-          </ul>
-
-          <p className="mt-4">All Musics are friendly; anyone can listen them. There are around <strong>60+ songs</strong></p>
-          <p className="mt-4">The name <strong>Tunify</strong> was chosen randomly; it sounded cool to me hehe.</p>
+           <p>Welcome to Tunify Music Player built with <strong>Next.js</strong>, <strong>framer-motion</strong>, <strong>Tailwind CSS</strong>, <strong>IconBuddy</strong>, <strong>Culrs</strong>, and <strong>Vercel</strong>.</p>
+           <p className="mt-4"><strong>Users can:</strong></p>
+           <ul className="list-disc list-inside pl-4 mt-2">
+            <li>Listen to both popular songs and AI-generated tracks</li>
+            <li>Shuffle & Repeat songs</li>
+            <li>Enjoy background animations</li>
+            <li>Search for songs</li>
+            <li>Toggle between Light/Dark Theme</li>
+           </ul>
+          
+           <p className="mt-4">The lyrics of the AI-generated songs were written by me, and the music and vocals were created using AI from <a href="suno.com" target="_blank">Suno.com.</a> Experience a mix of well-known hits and original AI-generated content!</p>
+           <p className="mt-4">The name <strong>Tunify</strong> was chosen randomly because it sounded cool to me hehe.</p>
 
         </div>
       </div>
