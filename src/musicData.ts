@@ -35,7 +35,7 @@ export const songs: Song[] = [
     title: 'Tere Bina zindagi',
     artist: 'Aman Kumar',
     coverUrl: '/covers/image_16e30464-89df-445f-a679-685fb44d172d.png',
-    audioUrl: '/Tere Bina zindagi .mp3',
+    audioUrl: '/Tere Bina zindagi.mp3',
   },
   {
     id: '6',
