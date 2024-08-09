@@ -212,6 +212,7 @@ const Player: React.FC<PlayerProps> = ({ song }) => {
             <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} ${isExpanded ? 'text-xl' : 'text-base'}`}>{currentSong.artist}</p>
 
             <div className="flex items-center space-x-4 mt-2">
+              <span className={isDarkMode ? 'text-white' : 'text-black'}>{formatTime(currentTime)}</span>
               <input
                   type="range"
                   min="0"
@@ -220,13 +221,8 @@ const Player: React.FC<PlayerProps> = ({ song }) => {
                   value={currentTime}
                   onChange={handleSeek}
                   className="appearance-none w-full h-1 bg-gray-700 rounded-lg outline-none focus:outline-none transition-all duration-300 ease-in-out"
-                />
-              <span className={isDarkMode ? 'text-white' : 'text-black'}>
-                    {formatTime(currentTime)}
-                  </span>
-                  <span className={isDarkMode ? 'text-white' : 'text-black'}>
-                    / {formatTime(duration)}
-                  </span>
+                />  
+              <span className={isDarkMode ? 'text-white' : 'text-black'}>{formatTime(duration)}</span>
             </div>
             <div className="flex items-center space-x-4 mt-2">
               <button
