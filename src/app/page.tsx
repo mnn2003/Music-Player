@@ -21,12 +21,10 @@ export default function Home() {
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray text-black'}`}>
-
-
       <Header />
       <main className="max-w-6xl mx-auto p-8">
         <SearchBar songs={songs} setSearchResults={setSearchResults} />
-        <SongList tracks={searchResults} onSongClick={handleSongClick} />
+        <SongList tracks={searchResults} onSongClick={handleSongClick} currentSong={currentSong} />
       </main>
       <Player song={currentSong} />
     </div>
