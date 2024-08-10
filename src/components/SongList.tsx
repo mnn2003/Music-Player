@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Song } from '../types';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -9,10 +9,10 @@ import { useTheme } from '../context/ThemeContext';
 interface SongListProps {
   tracks: Song[];
   onSongClick: (song: Song) => void;
-  currentSong: Song | null;
+  currentSong: Song | null; // Add this line
 }
 
-const SongList: React.FC<SongListProps> = ({ tracks, onSongClick, currentSong }) => {
+const SongList: React.FC<SongListProps> = ({ tracks, onSongClick, currentSong }) => { // Update this line
   const { isDarkMode } = useTheme();
 
   const handleClick = (song: Song) => {
@@ -43,7 +43,7 @@ const SongList: React.FC<SongListProps> = ({ tracks, onSongClick, currentSong })
       {tracks.map((track) => (
         <motion.div
           key={track.id}
-          className={`p-4 rounded-lg flex items-center space-x-4 cursor-pointer transition-all duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-gray-200 text-black'} ${currentSong && currentSong.id === track.id ? 'border-2 border-blue-500' : ''}`}
+          className={`p-4 rounded-lg flex items-center space-x-4 cursor-pointer transition-all duration-300 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-gray-200 text-black'} ${currentSong && currentSong.id === track.id ? 'active-song' : ''}`}
           onClick={() => handleClick(track)}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
