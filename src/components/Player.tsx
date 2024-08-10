@@ -201,13 +201,12 @@ const Player: React.FC<PlayerProps> = ({ song }) => {
             </div>
           )}
           <div className={`flex-shrink-0 ${isExpanded ? 'mb-4' : ''}`}>
-            <Image src={currentSong.coverUrl} alt="Song Cover" width={isExpanded ? 350 : 100} height={isExpanded ? 350 : 100} className="rounded-lg border" />
+            <Image src={currentSong.coverUrl} alt="Song Cover" width={isExpanded ? 350 : 100} height={isExpanded ? 350 : 100} className="rounded-lg" />
           </div>
-          <div className="flex-1 min-w-0">
-            <h3 className={`${isDarkMode ? 'text-white' : 'text-black'} ${isExpanded ? 'text-3xl' : 'text-lg'} font-bold`}>{currentSong.title}</h3>
-            <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} ${isExpanded ? 'text-xl' : 'text-base'}`}>{currentSong.artist}</p>
-
-            <div className="flex items-center space-x-4 mt-2">
+          <div className={`flex flex-col justify-center flex-grow ${isExpanded ? 'items-center text-center' : ''}`}>
+            <h3 className={`${isDarkMode ? 'text-white' : 'text-black'} font-bold text-xl`}>{currentSong.title}</h3>
+            <p className={`${isDarkMode ? 'text-gray-300' : 'text-gray-600'} text-sm`}>{currentSong.artist}</p>
+            <div className="flex items-center space-x-2 mt-4">
               <span className={`${isDarkMode ? 'text-white' : 'text-black'} font-mono`}>{formatTime(currentTime)}</span>
               <input
                 type="range"
