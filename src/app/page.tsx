@@ -20,7 +20,7 @@ export default function Home() {
   };
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray text-black'}`}>
+    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'}`}>
       <Header />
       <main className="max-w-6xl mx-auto p-8">
         <SearchBar songs={songs} setSearchResults={setSearchResults} />
