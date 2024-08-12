@@ -3,6 +3,13 @@ import { Song } from './types'; // Ensure correct path to types
 export const songs: Song[] = [
 
   {
+    id: '14',
+    title: 'Tu khwaab saja',
+    artist: 'Aman Kumar',
+    coverUrl: '/covers/image_2d3d8871-68e6-4122-9486-e62d878cbd8b.png',
+    audioUrl: '/Tu khwaab saja.mp3',
+  },
+  {
     id: '1',
     title: 'Tera jaana',
     artist: 'Aman Kumar',
