@@ -3,6 +3,30 @@ import { Song } from './types'; // Ensure correct path to types
 export const songs: Song[] = [
 
   {
+    id: '17',
+    title: 'Dil Ki Bebasi',
+    artist: 'Aman Kumar',
+    coverUrl: '/covers/image_dc245143-613b-4834-a58b-d7bf52b23492.jpeg',
+    audioUrl: '/Dard Ko Chhupa Ke.mp3',
+  },
+
+  {
+    id: '16',
+    title: 'Jab Bhi Bulaoge',
+    artist: 'Aman Kumar',
+    coverUrl: '/covers/image_c133a626-82f3-40b9-ad4c-3d9acda7457b.jpeg',
+    audioUrl: '/Pukaroge tum.mp3',
+  },
+
+  {
+    id: '15',
+    title: 'Tum Phool Ho',
+    artist: 'Aman Kumar',
+    coverUrl: '/covers/image_22ad4b1f-250c-4ccb-92a9-802d8840f89b.jpeg',
+    audioUrl: '/Tum Phool Ho.mp3',
+  },
+
+  {
     id: '14',
     title: 'Tu khwaab saja',
     artist: 'Aman Kumar',
