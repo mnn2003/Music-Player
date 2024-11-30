@@ -1,32 +1,51 @@
 'use client'
 
-import React, { useState } from 'react';
-
-import Header from '../components/Header';
-import SearchBar from '../components/SearchBar';
-import Player from '../components/Player';
-import SongList from '../components/SongList';
-import { Song } from '../types';
-import { songs } from '../musicData';
-import { useTheme } from '../context/ThemeContext';
+import React, { useState } from 'react'
+import Header from '../components/Header'
+import SearchBar from '../components/SearchBar'
+import Player from '../components/Player'
+import SongList from '../components/SongList'
+import { Song } from '../types'
+import { songs } from '../musicData'
+import { useTheme } from '../context/ThemeContext'
 
 export default function Home() {
-  const [currentSong, setCurrentSong] = useState<Song | null>(null);
-  const [searchResults, setSearchResults] = useState<Song[]>(songs);
-  const { isDarkMode } = useTheme();
+  const [currentSong, setCurrentSong] = useState<Song | null>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [searchResults, setSearchResults] = useState<Song[]>(songs)
+  const { isDarkMode } = useTheme()
 
   const handleSongClick = (song: Song) => {
-    setCurrentSong(song);
-  };
+    if (currentSong && currentSong.id === song.id) {
+      setIsPlaying(!isPlaying)
+    } else {
+      setCurrentSong(song)
+      setIsPlaying(true)
+    }
+  }
+
+  const handlePlayPause = () => {
+    setIsPlaying(!isPlaying)
+  }
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'}`}>
       <Header />
       <main className="max-w-6xl mx-auto p-8">
         <SearchBar songs={songs} setSearchResults={setSearchResults} />
-        <SongList tracks={searchResults} onSongClick={handleSongClick} currentSong={currentSong} />
+        <SongList 
+          tracks={searchResults} 
+          onSongClick={handleSongClick} 
+          currentSong={currentSong} 
+          isPlaying={isPlaying}
+        />
       </main>
-      <Player song={currentSong} />
+      <Player 
+        song={currentSong} 
+        isPlaying={isPlaying} 
+        onPlayPause={handlePlayPause}
+      />
     </div>
-  );
+  )
 }
+
