@@ -11,40 +11,21 @@ import { useTheme } from '../context/ThemeContext'
 
 export default function Home() {
   const [currentSong, setCurrentSong] = useState<Song | null>(null)
-  const [isPlaying, setIsPlaying] = useState(false)
   const [searchResults, setSearchResults] = useState<Song[]>(songs)
   const { isDarkMode } = useTheme()
 
   const handleSongClick = (song: Song) => {
-    if (currentSong && currentSong.id === song.id) {
-      setIsPlaying(!isPlaying)
-    } else {
-      setCurrentSong(song)
-      setIsPlaying(true)
-    }
-  }
-
-  const handlePlayPause = () => {
-    setIsPlaying(!isPlaying)
+    setCurrentSong(song)
   }
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-black'}`}>
       <Header />
-      <main className="max-w-6xl mx-auto p-8">
+      <main className="max-w-6xl mx-auto p-8 pb-24">
         <SearchBar songs={songs} setSearchResults={setSearchResults} />
-        <SongList 
-          tracks={searchResults} 
-          onSongClick={handleSongClick} 
-          currentSong={currentSong} 
-          isPlaying={isPlaying}
-        />
+        <SongList tracks={searchResults} onSongClick={handleSongClick} currentSong={currentSong} isPlaying={false} />
       </main>
-      <Player 
-        song={currentSong} 
-        isPlaying={isPlaying} 
-        onPlayPause={handlePlayPause}
-      />
+      <Player song={currentSong} />
     </div>
   )
 }
